@@ -3,27 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Valentine's Day Application</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
         }
-        button {
+        .button {
+            display: inline-block;
             padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            z-index: 10; /* Ensures button is on top */
+        }
+        .button:hover {
+            background-color: #ff3b3b;
+            transition: background-color 0.3s ease;
+        }
+        .no-button {
+            position: relative; /* Fixes positioning */
+            margin-left: 10px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <button>Click Me!</button>
-    <button>Another Button</button>
+    <h1>Valentine's Day Surprise!</h1>
+    <p>Do you want to receive a Valentine's Day surprise?</p>
+    <button class="button" id="yes-button">Yes</button>
+    <button class="button no-button" id="no-button">No</button>
+
+    <script>
+        document.getElementById('yes-button').onclick = function() {
+            alert('You will receive a wonderful surprise!');
+        };
+        document.getElementById('no-button').onclick = function() {
+            alert('No surprise for you!');
+        };
+    </script>
 </body>
 </html>
